@@ -7,8 +7,11 @@ import {
   AiOutlineClose,
 } from 'react-icons/ai';
 import logo from '../assets/logo.png';
+import { useShopContext } from '../hooks/useShopContext';
+
 export default function Navbar() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
+  const { numberOfItems } = useShopContext();
   return (
     <>
       <nav className="fixed w-full bg-custompaleorange flex border-b-2 border-customdarkblue border-opacity-30 justify-between items-center lg:px-32 px-4 py-4 z-40">
@@ -32,6 +35,7 @@ export default function Navbar() {
               Shopping Cart
             </h1>
             <AiOutlineShoppingCart size={30} />
+            {numberOfItems > 0 && <div className="bg-red-500 rounded-full w-8 h-8 text-xl border-red-800 text-red-800 border-2 font-extrabold flex justify-center items-center">{numberOfItems}</div>}
           </Link>
         </div>
       </nav>
