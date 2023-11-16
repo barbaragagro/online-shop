@@ -12,7 +12,10 @@ function App() {
         <Routes>
           <Route path="/" element={<ProductsPage />} />
           <Route path="/shoppingcart" element={<ShoppingCart />} />
-          <Route path="/productdetail" element={<ProductDetail />} />
+          <Route
+            path="/productdetail/:productUrl"
+            element={<ProductDetail />}
+          />
         </Routes>
       </BrowserRouter>
     </div>
