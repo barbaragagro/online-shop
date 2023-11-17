@@ -6,7 +6,7 @@ export default function ProductCard({ product }) {
   const { AddToCart } = useShopContext();
 
   const handleClick = () => {
-    navigate(`/online-shop/productdetail/:${product.url}`);
+    navigate(`/productdetail/:${product.url}`);
   };
   return (
     <section className="flex flex-col justify-between m-5 sm:w-72 p-5 rounded-lg shadow-xl bg-custompaleorange bg-opacity-40 ">
