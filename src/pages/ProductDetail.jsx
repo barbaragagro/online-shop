@@ -39,7 +39,7 @@ export default function ProductDetail() {
                 />
               ))}
           </div>
-          <p className="shadow-md ml-5 text-2xl font-bold mb-5">
+          <p className="p-1 text-customdarkorange uppercase shadow-md ml-5 text-2xl font-semibold mb-5">
             category: {Product.category}{' '}
           </p>
           <p className="ml-5 text-2xl font-bold mb-5">{Product.name}</p>
