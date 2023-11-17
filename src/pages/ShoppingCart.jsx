@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useShopContext } from '../hooks/useShopContext';
-import { AiOutlineDelete, AiOutlinePlusCircle } from 'react-icons/ai';
+import {
+  AiOutlineDelete,
+  AiOutlinePlusCircle,
+  AiOutlineShopping,
+} from 'react-icons/ai';
 
 export default function ShoppingCart() {
-  const { cart, AddToCart, RemoveFromCart } = useShopContext();
+  const { cart, AddToCart, RemoveFromCart, totalPrice } = useShopContext();
   const [filteredCart, setFilteredCart] = useState([]);
   useEffect(() => {
     const filterCart = () => {
@@ -53,13 +57,13 @@ export default function ShoppingCart() {
               </div>
               <div className="flex flex-col sm:pl-16 sm:mt-0 mt-5">
                 <button
-                  className=" flex justify-center rounded-lg sm:w-32 sm:h-1/2 items-center border border-green-500 bg-green-100 w-2/3 py-1 px-3 self-center mb-4"
+                  className="hover:scale-105 transition-all flex justify-center rounded-lg sm:w-32 sm:h-1/2 items-center border border-green-500 bg-green-100 w-2/3 py-1 px-3 self-center mb-4"
                   onClick={() => AddToCart(cartItem.id)}
                 >
                   <AiOutlinePlusCircle color="green" size={25} />
                 </button>
                 <button
-                  className="flex justify-center rounded-lg sm:w-32 sm:h-1/2 items-center border border-red-500 bg-red-100 w-2/3 py-1 px-3 self-center"
+                  className="hover:scale-105 transition-all flex justify-center rounded-lg sm:w-32 sm:h-1/2 items-center border border-red-500 bg-red-100 w-2/3 py-1 px-3 self-center"
                   onClick={() => RemoveFromCart(cartItem.id)}
                 >
                   <AiOutlineDelete color="red" size={25} />
@@ -68,8 +72,16 @@ export default function ShoppingCart() {
             </div>
           ))
         ) : (
-          <h1 className='flex justify-center text-2xl font-bold m-24 text-center'>No items in the cart!</h1>
+          <h1 className="flex justify-center text-2xl font-bold m-24 text-center">
+            No items in the cart!
+          </h1>
         )}
+      </div>
+      <div className="pb-8 flex flex-col justify-center items-center sm:items-end my-5 sm:my-12 sm:mx-12 shadow-lg p-5">
+        <p className='text-3xl font-bold'>TOTAL: {totalPrice.toFixed(2)}$</p>
+        <button className='hover:scale-105 sm:w-fit w-2/3 transition-all font-semibold shadow-lg border border-customdarkorange mt-5 flex justify-center bg-custompaleorange p-5 rounded-lg '>
+          CHECKOUT <AiOutlineShopping className='ml-1' size={25}/>
+        </button>
       </div>
     </section>
   );
