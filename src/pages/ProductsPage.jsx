@@ -42,9 +42,13 @@ export default function ProductsPage() {
         <Sort setSelectedSort={setSelectedSort} />
       </div>
       <div className="flex flex-wrap justify-center">
-        {sortedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        {sortedProducts.length ? (
+          sortedProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))
+        ) : (
+          <h1 className="text-customdarkorange mt-10 font-bold text-2xl">No such products.</h1>
+        )}
       </div>
     </section>
   );
