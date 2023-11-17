@@ -10,10 +10,10 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/online-shop" element={<ProductsPage />} />
-          <Route path="/online-shop/shoppingcart" element={<ShoppingCart />} />
+          <Route path="/" element={<ProductsPage />} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
           <Route
-            path="/online-shop/productdetail/:productUrl"
+            path="/productdetail/:productUrl"
             element={<ProductDetail />}
           />
         </Routes>
