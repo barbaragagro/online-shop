@@ -35,7 +35,7 @@ export default function ProductCard({ product }) {
         )}
         <button
           onClick={() => AddToCart(product.id)}
-          className="hover:scale-105 transition-all hover:bg-opacity-95 self-center text-custompaleorange rounded-lg px-5 py-2 my-2 bg-customdarkblue w-3/4"
+          className="hover:scale-105 transition-all hover:bg-opacity-95 self-center text-custompaleorange rounded-lg px-5 py-2 my-2 font-semibold bg-customdarkblue w-3/4"
         >
           Add to cart
         </button>
