@@ -15,9 +15,9 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed w-full bg-custompaleorange flex border-b-2 border-customdarkblue border-opacity-30 justify-between items-center lg:px-32 px-4 py-4 z-40">
-        <div className="lg:ml-20 ">
+        <Link className="lg:ml-20" to="/">
           <img src={logo} width="200" alt="logo" />
-        </div>
+        </Link>
 
         <div className="hidden sm:flex">
           <Link
@@ -35,7 +35,11 @@ export default function Navbar() {
               Shopping Cart
             </h1>
             <AiOutlineShoppingCart size={30} />
-            {numberOfItems > 0 && <div className="bg-red-500 rounded-full w-8 h-8 text-xl border-red-800 text-red-800 border-2 font-extrabold flex justify-center items-center">{numberOfItems}</div>}
+            {numberOfItems > 0 && (
+              <div className="bg-red-500 rounded-full w-8 h-8 text-xl border-red-800 text-red-800 border-2 font-extrabold flex justify-center items-center">
+                {numberOfItems}
+              </div>
+            )}
           </Link>
         </div>
       </nav>

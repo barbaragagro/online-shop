@@ -32,12 +32,12 @@ export default function ShoppingCart() {
                 />
                 <div className="flex flex-col justify-around ml-5">
                   <p className="font-bold sm:text-lg">{cartItem.name}</p>
-                  <p className="flex items-center">
+                  <div className="flex items-center">
                     <span className="text-lg">quantity:</span>
                     <div className=" min-w-fit w-8 flex justify-center ml-2 bg-custompaleorange p-1 rounded-lg shadow-sm border border-customdarkorange text-customdarkorange">
                       {cartItem.cartNumber}
                     </div>
-                  </p>
+                  </div>
                   <p>
                     <span className="text-lg">price: </span>
                     <span
