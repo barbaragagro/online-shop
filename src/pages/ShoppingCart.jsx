@@ -7,7 +7,7 @@ import {
 } from 'react-icons/ai';
 
 export default function ShoppingCart() {
-  const { cart, AddToCart, RemoveFromCart, totalPrice } = useShopContext();
+  const { cart, AddToCart, RemoveFromCart, totalPrice, numberOfItems } = useShopContext();
   const [filteredCart, setFilteredCart] = useState([]);
   useEffect(() => {
     const filterCart = () => {
@@ -79,7 +79,7 @@ export default function ShoppingCart() {
       </div>
       <div className="pb-8 flex flex-col justify-center items-center sm:items-end my-5 sm:my-12 sm:mx-12 shadow-lg p-5">
         <p className='text-3xl font-bold'>TOTAL: {totalPrice.toFixed(2)}$</p>
-        <button className='hover:scale-105 sm:w-fit w-2/3 transition-all font-semibold shadow-lg border border-customdarkorange mt-5 flex justify-center bg-custompaleorange p-5 rounded-lg '>
+        <button disabled={!numberOfItems} className=' disabled:hidden hover:scale-105 sm:w-fit w-2/3 transition-all font-semibold shadow-lg border border-customdarkorange mt-5 flex justify-center bg-custompaleorange p-5 rounded-lg '>
           CHECKOUT <AiOutlineShopping className='ml-1' size={25}/>
         </button>
       </div>
